@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Alpine Js Practice</title>
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+	<div
+		x-data="{
+			query: '',
+			image: '',
+
+			getImage() {
+				this.image = `https://source.unsplash.com/1600x900/?${this.query}`
+
+			}
+		}"
+	>
+		<form x-on:submit.prevent="getImage">
+			<input type="text" x-model="query">
+			<button type="submit">Search</button>
+		</form>
+
+		<div x-show="image">
+			<img x-bind:src="image" style="width: 300px; margin-top: 15px;">
+		</div>
+
+	</div>
+	
+</body>
+</html>

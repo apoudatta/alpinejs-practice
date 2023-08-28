@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Alpine Js Practice</title>
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+	<!-- <div x-data="{ name: '' }">
+		<input type="text" x-model="name">
+		<span x-text="name"></span>
+		<p x-text="name.length"></p>
+	</div> -->
+
+	<!-- <form x-data="{ name: '' }" x-on:submit.prevent="console.log(name)">
+		<input type="text" x-model="name">
+		<button type="submit">Submit</button>
+	</form> -->
+
+	<div
+		x-data="{
+			name: '',
+
+			makeNameUpperCase () {
+				this.name = this.name.toUpperCase()
+			}
+		}"
+	>
+		<input type="name" x-model="name">
+		<span x-text="name"></span>
+		<button x-on:click="makeNameUpperCase">Uppercase</button>
+	</div>
+</body>
+</html>

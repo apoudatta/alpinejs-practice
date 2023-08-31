@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Alpine Js Practice</title>
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+	<!-- <div x-data="{ agreed: false }">
+		<input type="checkbox" x-model="agreed" >
+		<span x-show="agreed">
+			You have agreed
+		</span>
+	</div> -->
+	
+	<!-- <div x-data="{ agreed: true }">
+		<input type="checkbox" x-model="agreed">
+	</div>  -->
+
+
+	<!-- <form 
+		x-data="{ 
+			users: [],
+
+			deleteUsers () {
+				console.log(this.users);
+			}
+		}"
+
+		x-on:submit.prevent="deleteUsers"
+	>
+		<input type="checkbox" x-model="users" value="1"> Opu 
+		<input type="checkbox" x-model="users" value="2"> Tusty 
+		<input type="checkbox" x-model="users" value="3"> Sharna 
+
+		<button type="submit">Submit</button>
+	</form> -->
+
+
+	<!-- <div x-data="{ plan: 'monthly' }">
+		<select x-model="plan">
+			<option>Please choose</option>
+			<option value="yearly">Yearly</option>
+			<option value="monthly">Monthly</option>
+		</select>
+
+		<span x-show="plan" x-text="`You've chosen the ${plan} plan.`"></span>
+	</div> -->
+
+
+	<div x-data="{ plan: 'monthly' }">
+		<input type="radio" x-model="plan" value="yearly">
+		<input type="radio" x-model="plan" value="monthly">
+
+		<span x-show="plan" x-text="`You've chosen the ${plan} plan.`"></span>
+	</div>
+</body>
+</html>

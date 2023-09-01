@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Alpine Js Practice</title>
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<style type="text/css">
+		.bold {
+			font-weight: bold;
+		}
+
+		.blue {
+			color: blue;
+		}
+
+		.progress {
+			height: 10px;
+			width: 300px;
+			background-color: #ccc;
+		}
+
+		.progress-inner {
+			height: 10px;
+			background-color: slategray;
+		} 
+	</style> 
+</head>
+<body>
+
+	<!-- <div
+		x-data="{
+			selected: [],
+			people: [
+				{ id: 1, name: 'Alex' },
+				{ id: 2, name: 'Billy' },
+				{ id: 3, name: 'Mabel' },
+			]
+		}"
+	>
+		<template x-for="person in people">
+			<div>
+				<input 
+					type="checkbox"
+					x-bind:value="person.id"
+					x-bind:id="`person_${person.id}`"
+					x-model.number="selected"
+				> 
+				<span 
+					x-text="person.name" 
+					x-bind:class="{ 'bold': selected.includes(person.id) }"
+				></span>
+			</div>
+		</template>		
+		
+	</div> -->
+
+	<div 
+		x-data="{ 
+			progress: 0,
+			increment () {
+				this.progress++
+			},
+
+			init () {
+				let interval = setInterval(() => {
+					if (this.progress >= 100) {
+						clearInterval(interval)
+					}
+					this.increment();
+				}, 100)
+			}
+		}"
+	>
+		<div class="progress">
+			<div class="progress-inner" x-bind:style="`width: ${progress}%;`">
+				
+			</div>
+		</div>
+
+		<button x-on:click="increment()">Increment</button>
+	</div>
+	
+
+</body>
+</html>
